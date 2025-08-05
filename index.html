@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MB Escuela</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: #f9fafa;
+      color: #222;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #00b8a9;
+      font-size: 2.8em;
+      margin-bottom: 10px;
+    }
+    p.lead {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    em {
+      color: #555;
+      font-size: 1em;
+    }
+    .button {
+      display: block;
+      margin: 14px auto;
+      padding: 14px 28px;
+      background: #00b8a9;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 90%;
+      max-width: 320px;
+    }
+    .button:hover {
+      background: #019188;
+    }
+    .video {
+      margin: 40px auto 30px;
+      max-width: 100%;
+    }
+    .testimonios {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: 1fr;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+    .testimonio {
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: left;
+    }
+    .testimonio img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+    h2 {
+      margin-top: 50px;
+      color: #00b8a9;
+      font-size: 1.8em;
+    }
+    h3 {
+      color: #333;
+    }
+    #countdown {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #c0392b;
+      margin-top: 10px;
+    }
+    #expired {
+      display: none;
+      color: #c0392b;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    #expired a {
+      color: #c0392b;
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    let tiempo = 5 * 60;
+    function iniciarCuentaRegresiva() {
+      const cuenta = document.getElementById("countdown");
+      const mensaje = document.getElementById("expired");
+      const timer = setInterval(() => {
+        const minutos = Math.floor(tiempo / 60);
+        const segundos = tiempo % 60;
+        cuenta.textContent = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+        tiempo--;
+        if (tiempo < 0) {
+          clearInterval(timer);
+          cuenta.textContent = "00:00";
+          mensaje.style.display = "block";
+        }
+      }, 1000);
+    }
+    window.onload = iniciarCuentaRegresiva;
+  </script>
+</head>
+<body>
+
+  <h1>🚀 Transforma tu carrera con MB Escuela</h1>
+  <p class="lead"><strong>Formaciones profesionales en Alisado, Mechas y Colorimetría</strong><br> Solo para estilistas que quieren llegar al siguiente nivel</p>
+
+  <a class="button" href="https://wa.me/51912345678">📲 Solicitar entrevista por WhatsApp</a>
+  <a class="button" href="https://instagram.com/mbescuela.pe">📸 Ver nuestro Instagram</a>
+  <a class="button" href="https://youtube.com/@mbescuela">🎥 Canal de YouTube</a>
+
+  <div class="video">
+    <p><strong>🎥 Mira este video antes de escribirnos:</strong></p>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/VIDEO_ID_AQUI" frameborder="0" allowfullscreen></iframe>
+    <img src="https://yandirmb.github.io/mbescuela.bio/img/salon.jpg" alt="Salón MB Escuela" style="max-width:100%;border-radius:12px;margin-top:20px;">
+  </div>
+
+  <h2>Cupos limitados por grupo ⚠️</h2>
+  <p class="lead">
+    Para garantizar un acompañamiento personalizado, aceptamos<br>
+    solo <strong>6 alumnas por grupo</strong>.
+  </p>
+  <p><em>Las entrevistas de ingreso se agendan por orden de solicitud.</em></p>
+  <a class="button" href="https://wa.me/51912345678?text=Hola,%20quiero%20solicitar%20mi%20intervista">📲 Solicitar entrevista de ingreso</a>
+
+  <h2>⏳ Oferta válida solo por:</h2>
+  <div id="countdown">05:00</div>
+  <p id="expired">⚠️ Tiempo agotado. <a href="https://wa.me/51912345678?text=Hola,%20vi%20que%20se%20agot%C3%B3%20el%20tiempo,%20%C2%BFa%C3%BAn%20hay%20cupos%20disponibles?">Consulta si aún quedan cupos disponibles</a>.</p>
+
+  <h2>✅ Garantía de aprendizaje</h2>
+  <p class="lead">Si no aprendes, puedes repetir gratis el curso en el siguiente grupo.<br>Así de segura estamos de nuestros resultados.</p>
+
+  <h2>📢 Testimonios reales de nuestras alumnas</h2>
+  <div class="testimonios">
+    <div class="testimonio">
+      <h3>✨ Karla G. – Alisado</h3>
+      <p>“Nunca pensé aprender tanto en tan poco tiempo. Ya estoy ofreciendo el servicio a mis clientas y ven resultados desde la primera sesión.”</p>
+      <img src="https://yandirmb.github.io/mbescuela.bio/img/testimonio1.jpg" alt="Testimonio Karla">
+    </div>
+    <div class="testimonio">
+      <h3>💫 Rocío M. – Mechas Express</h3>
+      <p>“Me encantó la paciencia y técnica que usan. Me ayudaron desde cero a dominar el tema. ¡Ahora tengo más clientas y más seguridad!”</p>
+      <img src="https://yandirmb.github.io/mbescuela.bio/img/testimonio2.jpg" alt="Testimonio Rocío">
+    </div>
+    <div class="testimonio">
+      <h3>🌟 Fernanda L. – Colorimetría</h3>
+      <p>“Gracias a MB Escuela entendí la teoría y la práctica, y ahora aplico todo con más confianza. Fue una inversión que valió totalmente la pena.”</p>
+      <img src="https://yandirmb.github.io/mbescuela.bio/img/testimonio3.jpg" alt="Testimonio Fernanda">
+    </div>
+  </div>
+</div>
+
+  <h2>🏛️ Nuestro espacio exclusivo en San Isidro</h2>
+  <p class="lead">Contamos con un estudio privado, profesional y equipado solo con productos de alto nivel. Aquí cada alumna aprende en un ambiente cómodo y de confianza.</p>
+  <img src="https://yandirmb.github.io/mbescuela.bio/img/salon2.jpg" alt="Espacio MB Escuela" style="max-width:100%;border-radius:14px;margin:20px auto;">
+
+  <blockquote style="max-width:700px;margin:30px auto;font-style:italic;color:#444;">“Somos salón máster en transformación capilar. En MB Escuela entendemos lo que tu cabello y tus clientas necesitan para destacar.”</blockquote>
+  <a class="button" href="https://instagram.com/mbescuela.pe" target="_blank">📸 Ver más fotos del salón</a>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/51912345678" style="position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+</a>
+
+<!-- Botón flotante de Instagram -->
+<a href="https://instagram.com/mbescuela.pe" target="_blank" style="position: fixed; bottom: 90px; right: 20px; background-color: #E1306C; color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px; height: 30px;">
+</a>
+
+
+</body>
+</html>
